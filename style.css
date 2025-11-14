@@ -4,51 +4,132 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #e0f7fa; /* Light blue background */
+    font-family: 'Arial', sans-serif;
 }
 
 .calculator {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    border: 1px solid #00bcd4; /* Cyan border */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.3); /* Cyan shadow */
+    width: 320px;
+    overflow: hidden;
+    background-color: #ffffff; /* White calculator background */
 }
 
 .display {
-    background-color: #222;
-    color: #fff;
+    background-color: #263238; /* Dark slate grey for display */
+    color: #e0f7fa; /* Light blue text for display */
     text-align: right;
-    padding: 10px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .display input {
     width: 100%;
     background: none;
     border: none;
-    color: #fff;
-    font-size: 2em;
+    color: #e0f7fa; /* Light blue text for display */
+    font-size: 2.5em;
     text-align: right;
+    outline: none;
 }
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 1px; /* Small gap between buttons */
+    background-color: #cfd8dc; /* Light grey background for button grid */
 }
 
 button {
-    border: 1px solid #ccc;
+    border: none; /* Remove individual button borders */
     padding: 20px;
     font-size: 1.5em;
     cursor: pointer;
-    background-color: #fff;
+    background-color: #eceff1; /* Light grey for default buttons */
+    transition: background-color 0.2s ease;
+    color: #37474f; /* Dark text for buttons */
 }
 
 button:hover {
-    background-color: #f0f0f0;
+    background-color: #cfd8dc; /* Slightly darker grey on hover */
 }
 
 button:active {
-    background-color: #e0e0e0;
+    background-color: #b0bec5; /* Even darker grey on active */
+}
+
+/* Specific button styling */
+button:nth-child(1) { /* C button */
+    background-color: #ef5350; /* Red */
+    color: #ffffff;
+}
+button:nth-child(1):hover {
+    background-color: #e53935;
+}
+button:nth-child(1):active {
+    background-color: #c62828;
+}
+
+button:nth-child(2) { /* DEL button */
+    background-color: #ffb300; /* Amber */
+    color: #ffffff;
+}
+button:nth-child(2):hover {
+    background-color: #ffa000;
+}
+button:nth-child(2):active {
+    background-color: #fb8c00;
+}
+
+button:nth-child(3),
+button:nth-child(4),
+button:nth-child(8),
+button:nth-child(12) { /* Operator buttons */
+    background-color: #42a5f5; /* Blue */
+    color: #ffffff;
+}
+button:nth-child(3):hover,
+button:nth-child(4):hover,
+button:nth-child(8):hover,
+button:nth-child(12):hover {
+    background-color: #2196f3;
+}
+button:nth-child(3):active,
+button:nth-child(4):active,
+button:nth-child(8):active,
+button:nth-child(12):active {
+    background-color: #1976d2;
+}
+
+button:nth-child(16) { /* = button */
+    background-color: #66bb6a; /* Green */
+    color: #ffffff;
+    grid-row: span 2; /* Make it span two rows */
+    height: 100%; /* Ensure it fills the space */
+}
+button:nth-child(16):hover {
+    background-color: #43a047;
+}
+button:nth-child(16):active {
+    background-color: #2e7d32;
+}
+
+/* Adjust the layout for the last row to accommodate the taller equals button */
+.buttons button:nth-child(13) { /* 1 */
+    grid-column: 1;
+}
+.buttons button:nth-child(14) { /* 2 */
+    grid-column: 2;
+}
+.buttons button:nth-child(15) { /* 3 */
+    grid-column: 3;
+}
+.buttons button:nth-child(17) { /* 0 */
+    grid-column: span 2; /* Make 0 button span two columns */
+}
+.buttons button:nth-child(18) { /* . */
+    grid-column: 3;
 }
